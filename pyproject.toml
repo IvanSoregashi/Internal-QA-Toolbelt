@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Ivans-toolbelt"
+version = "0.0.2"
+authors = [{name = "Ivan Shiriaev", email = "IvanShiriaev2222@gmail.com"}]
+dependencies = ["streamlit"]
+[tool.setuptools.packages.find]
