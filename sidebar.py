@@ -26,6 +26,9 @@ def parse_query():
     if user: state["user"] = user
     if env: state["env"] = env
 
+    if "user_field" not in st.session_state:
+        st.session_state.user_field = user
+
     st.query_params.update(state)
     st.session_state.update(state)
 
@@ -56,13 +59,14 @@ def context():
     user = st.session_state.get("user")
 
     # Login Form
-    name = st.text_input("User", key="user", disabled=bool(user))
+    name = st.text_input("User", key="user_field", disabled=bool(user))
 
     col1, col2 = st.columns([1, 3])
     with col1:
         if st.button("Login", disabled=bool(user)) and name:
             st.query_params["user"] = name
-
+            st.session_state["user"] = name
+            st.session_state["user_object"] = User(name)
             st.rerun()
     with col2:
         if st.button("Logout", disabled=(not bool(user))):
@@ -85,3 +89,4 @@ def context():
     # if account:        account_field = st.text_input("Account", value=account, key="account_text_input")
     # if device:        device_field = st.text_input("Device", value=device, key="device_text_input")
 
+    st.write(st.session_state)
