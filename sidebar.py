@@ -62,11 +62,13 @@ def context():
     with col1:
         if st.button("Login", disabled=bool(user)) and name:
             st.query_params["user"] = name
+
             st.rerun()
     with col2:
         if st.button("Logout", disabled=(not bool(user))):
             del st.query_params["user"]
             del st.session_state["user"]
+            st.session_state["user_object"] = User(None)
             st.rerun()
 
     # Environment Form

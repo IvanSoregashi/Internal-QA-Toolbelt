@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from settings import logging, Logger
+from logic.settings import logging, Logger
 
 
 class User:

@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 if st.session_state.user_object.is_basic_user():
     st.stop()
 
