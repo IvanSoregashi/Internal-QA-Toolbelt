@@ -5,4 +5,4 @@ Left the functional part out of equation. Only basic **Streamlit** frontend is p
 
 ![the look](https://github.com/IvanSoregashi/Internal-QA-Toolbelt/blob/master/chrome_WVRS7iM92l.png)
 
-This repo will eventuaslly also be replaced wth generic version, when I will get to it.
+This repo will eventually also be replaced wth generic version, when I will get to it.
